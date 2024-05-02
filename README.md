@@ -47,26 +47,6 @@ Maven dependencies for Html Elements core:
 </dependency>
 ```
 
-And for Thucydides integration:
-
-```xml
-<dependency>
-    <groupId>ru.yandex.qatools.htmlelements</groupId>
-    <artifactId>htmlelements-thucydides</artifactId>
-    <version>1.19</version>
-</dependency>
-```
-
-Or you can include all modules at once if needed:
-
-```xml
-<dependency>
-    <groupId>ru.yandex.qatools.htmlelements</groupId>
-    <artifactId>htmlelements-all</artifactId>
-    <version>1.19</version>
-</dependency>
-```
-
 Since 1.15 Java 8 is required. Please use 1.14 for Java 7 support.
 
 Create blocks of elements

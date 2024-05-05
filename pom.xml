@@ -9,7 +9,7 @@
 
     <name>Yandex QATools HtmlElements For Java</name>
     <description>WebDriver PageObject extension</description>
-    <url>https://github.com/yandex-qatools/htmlelements/</url>
+    <url>https://github.com/Zlaman/htmlelements-java</url>
 
     <organization>
         <name>Yandex</name>
@@ -25,9 +25,9 @@
     </licenses>
 
     <scm>
-        <url>git@github.com:yandex-qatools/htmlelements.git</url>
-        <connection>scm:git:git@github.com:yandex-qatools/htmlelements.git</connection>
-        <developerConnection>scm:git:git@github.com:yandex-qatools/htmlelements.git</developerConnection>
+        <url>git@github.com:Zlaman/htmlelements-java.git</url>
+        <connection>scm:git:git@github.com:Zlaman/htmlelements-java.git</connection>
+        <developerConnection>scm:git:git@github.com:Zlaman/htmlelements-java.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 

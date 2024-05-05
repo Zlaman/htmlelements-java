@@ -126,8 +126,28 @@ public abstract class TypifiedElement implements WrapsElement, Named, WebElement
     }
 
     @Override
+    public String getDomProperty(String name) {
+        return getWrappedElement().getDomProperty(name);
+    }
+
+    @Override
+    public String getDomAttribute(String name) {
+        return getWrappedElement().getDomAttribute(name);
+    }
+
+    @Override
     public String getAttribute(String name) {
         return getWrappedElement().getAttribute(name);
+    }
+
+    @Override
+    public String getAriaRole() {
+        return getWrappedElement().getAriaRole();
+    }
+
+    @Override
+    public String getAccessibleName() {
+        return getWrappedElement().getAccessibleName();
     }
 
     @Override
@@ -153,6 +173,11 @@ public abstract class TypifiedElement implements WrapsElement, Named, WebElement
     @Override
     public WebElement findElement(By by) {
         return getWrappedElement().findElement(by);
+    }
+
+    @Override
+    public SearchContext getShadowRoot() {
+        return getWrappedElement().getShadowRoot();
     }
 
     @Override

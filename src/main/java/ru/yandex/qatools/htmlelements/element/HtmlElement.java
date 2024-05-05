@@ -141,6 +141,46 @@ public class HtmlElement implements WebElement, WrapsElement, Named {
     }
 
     /**
+     * Get the value of the given property of the element. Will return the current value, even if this
+     * has been modified after the page has been loaded.
+     *
+     * <p>See <a href="https://w3c.github.io/webdriver/#get-element-property">W3C WebDriver
+     * specification</a> for more details.
+     *
+     * @param name The name of the property.
+     * @return The property's current value or null if the value is not set.
+     */
+    @Override
+    public String getDomProperty(String name) {
+        return wrappedElement.getDomProperty(name);
+    }
+
+    /**
+     * Get the value of the given attribute of the element.
+     *
+     * <p>This method, unlike {@link #getAttribute(String)}, returns the value of the attribute with
+     * the given name but not the property with the same name.
+     *
+     * <p>The following are deemed to be "boolean" attributes, and will return either "true" or null:
+     *
+     * <p>async, autofocus, autoplay, checked, compact, complete, controls, declare, defaultchecked,
+     * defaultselected, defer, disabled, draggable, ended, formnovalidate, hidden, indeterminate,
+     * iscontenteditable, ismap, itemscope, loop, multiple, muted, nohref, noresize, noshade,
+     * novalidate, nowrap, open, paused, pubdate, readonly, required, reversed, scoped, seamless,
+     * seeking, selected, truespeed, willvalidate
+     *
+     * <p>See <a href="https://w3c.github.io/webdriver/#get-element-attribute">W3C WebDriver
+     * specification</a> for more details.
+     *
+     * @param name The name of the attribute.
+     * @return The attribute's value or null if the value is not set.
+     */
+    @Override
+    public String getDomAttribute(String name) {
+        return wrappedElement.getDomAttribute(name);
+    }
+
+    /**
      * Gets the value of a the given attribute of the element. See {@link WebElement#getAttribute(String)}
      * for more details.
      *
@@ -150,6 +190,33 @@ public class HtmlElement implements WebElement, WrapsElement, Named {
     @Override
     public String getAttribute(String name) {
         return wrappedElement.getAttribute(name);
+    }
+
+    /**
+     * Gets result of computing the WAI-ARIA role of element.
+     *
+     * <p>See <a href="https://www.w3.org/TR/webdriver/#get-computed-role">W3C WebDriver
+     * specification</a> for more details.
+     *
+     * @return the WAI-ARIA role of the element.
+     */
+    @Override
+    public String getAriaRole() {
+        return wrappedElement.getAriaRole();
+    }
+
+    /**
+     * Gets result of a Accessible Name and Description Computation for the Accessible Name of the
+     * element.
+     *
+     * <p>See <a href="https://www.w3.org/TR/webdriver/#get-computed-label">W3C WebDriver
+     * specification</a> for more details.
+     *
+     * @return the accessible name of the element.
+     */
+    @Override
+    public String getAccessibleName() {
+        return wrappedElement.getAccessibleName();
     }
 
     /**
@@ -208,6 +275,16 @@ public class HtmlElement implements WebElement, WrapsElement, Named {
     @Override
     public WebElement findElement(By by) {
         return wrappedElement.findElement(by);
+    }
+
+    /**
+     * @return A representation of an element's shadow root for accessing the shadow DOM of a web
+     * component.
+     * @throws NoSuchShadowRootException If no shadow root is found
+     */
+    @Override
+    public SearchContext getShadowRoot() {
+        return wrappedElement.getShadowRoot();
     }
 
     /**

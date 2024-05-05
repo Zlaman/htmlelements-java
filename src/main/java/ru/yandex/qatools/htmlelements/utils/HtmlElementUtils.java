@@ -31,8 +31,8 @@ public final class HtmlElementUtils {
     public static <T> T newInstance(Class<T> clazz, Object... args) throws IllegalAccessException,
             InstantiationException, NoSuchMethodException, InvocationTargetException {
         if (clazz.isMemberClass() && !Modifier.isStatic(clazz.getModifiers())) {
-            Class outerClass = clazz.getDeclaringClass();
-            Object outerObject = outerClass.newInstance();
+            Class<?> outerClass = clazz.getDeclaringClass();
+            Object outerObject = outerClass.getDeclaredConstructor().newInstance();
             return invokeConstructor(clazz, Lists.asList(outerObject, args).toArray());
         }
         return invokeConstructor(clazz, args);
@@ -47,7 +47,7 @@ public final class HtmlElementUtils {
     }
 
     public static <T> boolean isHtmlElement(T instance) {
-        return HtmlElement.class.isInstance(instance);
+        return instance instanceof HtmlElement;
     }
 
     public static boolean isTypifiedElement(Field field) {

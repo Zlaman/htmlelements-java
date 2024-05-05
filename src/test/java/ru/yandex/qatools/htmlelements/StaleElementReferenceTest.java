@@ -13,8 +13,8 @@ public class StaleElementReferenceTest {
 
     @Test
     public void testOutput() {
+        System.setProperty("webdriver.timeouts.implicitlywait", "1");
         StaleElementReferencePage staleElementReferencePage = new StaleElementReferencePage();
         assertThat(staleElementReferencePage.getElement().getText(), equalTo(StaleElementReferencePage.ELEMENT_TEXT));
     }
-
 }

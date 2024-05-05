@@ -13,13 +13,9 @@ import java.util.concurrent.TimeUnit;
  * Date: 21.08.12
  */
 public class WebElementNamedProxyHandler extends LocatingElementHandler {
-
-    public static final int DEFAULT_TIMEOUT = 5;
-
+    public static final int DEFAULT_TIMEOUT = 0;
     private final long timeOutInSeconds;
-
     private final Clock clock;
-
     private final String name;
 
     public WebElementNamedProxyHandler(ElementLocator locator, String name) {
@@ -50,7 +46,7 @@ public class WebElementNamedProxyHandler extends LocatingElementHandler {
     }
 
     protected long sleepFor() {
-        return 500L;
+        return 250L;
     }
 
     private void waitFor() throws InterruptedException {

@@ -115,6 +115,7 @@
                 <executions>
                     <execution>
                         <id>attach-sources</id>
+                        <phase>deploy</phase>
                         <goals>
                             <goal>jar</goal>
                         </goals>
@@ -128,11 +129,11 @@
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
+                        <phase>deploy</phase>
                         <goals>
                             <goal>jar</goal>
                         </goals>
                         <configuration>
-                            <source>${java.version}</source>
                             <doclint>none</doclint>
                         </configuration>
                     </execution>

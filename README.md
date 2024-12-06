@@ -1,4 +1,4 @@
-Html Elements framework
+Html Elements framework with Selenium 4 support
 =======================
 This framework is designed to provide an easy-to-use way of interacting with web-page elements in your tests.
 It can be considered to be an extension of WebDriver Page Object.
